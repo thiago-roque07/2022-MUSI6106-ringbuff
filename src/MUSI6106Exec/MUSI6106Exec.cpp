@@ -29,6 +29,7 @@ int main(int argc, char* argv[])
 
     pCRingBuff = new CRingBuffer<float>(kBlockSize);
      
+    cout << "-- test simple buffer write and read --" << endl;
     for (int i = 0; i < test1_InitLenght; i++)
     {
         pCRingBuff->putPostInc(1.F*i);
@@ -58,9 +59,33 @@ int main(int argc, char* argv[])
         cout << endl;
         pCRingBuff->putPostInc(1.F * i);
     }
+    cout << endl;
 
+    // Test reset function //
     pCRingBuff->reset();
+    cout << "-- test reset function --" << endl;
+    if (!(pCRingBuff->getWriteIdx()) || !(pCRingBuff->getReadIdx())) {
+        cout << "write idx: " << pCRingBuff->getWriteIdx() << endl;
+        cout << "read idx: " << pCRingBuff->getReadIdx() << endl;
+    }
+    else {
+        cout << "Error on reset index" << endl;
+        cout << "expected 0" << endl;
+        cout << "received: " << pCRingBuff->getWriteIdx() << "for write index" << endl;
+        cout << "received: " << pCRingBuff->getReadIdx() << "for read index" << endl;
+    }
 
+    for (int i = 0; i < kBlockSize; i++)
+    {
+        if (pCRingBuff->get(i)) {
+            cout << "Error reseting buffer" << endl;
+            return -1;
+        }
+    }
+    cout << "buffer empty" << endl;
+    cout << endl;
+
+    cout << "-- test more complex write and read --" << endl;
     for (int i = 0; i < test2_InitLenght; i++)
     {
         pCRingBuff->putPostInc(1.F * i);
