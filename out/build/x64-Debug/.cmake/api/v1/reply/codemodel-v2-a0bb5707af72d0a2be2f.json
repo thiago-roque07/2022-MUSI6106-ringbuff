@@ -1,0 +1,129 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "MUSI6106Exec",
+					"jsonFile" : "directory-MUSI6106Exec-Debug-49c20fae975f8e518fe2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/MUSI6106Exec",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "AudioFileIO",
+					"childIndexes" : 
+					[
+						3
+					],
+					"jsonFile" : "directory-AudioFileIO-Debug-df7b55dd630ae9399ab2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/AudioFileIO",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "AudioFileIO/sndlib",
+					"jsonFile" : "directory-AudioFileIO.sndlib-Debug-ffb4c0bc367c65194eb1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "3rdparty/sndlib",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"name" : "MUSI6106",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "AudioFileIO::@14733eaaa109906c281b",
+					"jsonFile" : "target-AudioFileIO-Debug-45360bc003f2a326e3dc.json",
+					"name" : "AudioFileIO",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "MUSI6106Exec::@1ca4e22c5ff24413807f",
+					"jsonFile" : "target-MUSI6106Exec-Debug-2f4babf817c0c1499fca.json",
+					"name" : "MUSI6106Exec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sndlib::@bef705fde8a82da36e5a",
+					"jsonFile" : "target-sndlib-Debug-8884bece52db6c18d1c9.json",
+					"name" : "sndlib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug",
+		"source" : "C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

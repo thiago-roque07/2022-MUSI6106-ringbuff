@@ -1,0 +1,209 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/bin/Debug/MUSI6106Exec.exe"
+		},
+		{
+			"path" : "C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/bin/Debug/MUSI6106Exec.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"include_directories",
+			"add_inc_directories"
+		],
+		"files" : 
+		[
+			"src/MUSI6106Exec/CMakeLists.txt",
+			"cmake.modules/AddIncDirectories.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 15,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 9,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 3,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 3,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 3,
+				"parent" : 3
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W4 /GR /fp:precise -MTd /Zi /Ob0 /Od /RTC1"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/inc"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/src/inc"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/inc"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "sndlib::@bef705fde8a82da36e5a"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "AudioFileIO::@14733eaaa109906c281b"
+		}
+	],
+	"id" : "MUSI6106Exec::@1ca4e22c5ff24413807f",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /W4 /GR /fp:precise -MTd /Zi /Ob0 /Od /RTC1",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "..\\..\\..\\lib\\Debug\\libAudioFileIO.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "..\\..\\..\\lib\\Debug\\libsndlib.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "MUSI6106Exec",
+	"nameOnDisk" : "MUSI6106Exec.exe",
+	"paths" : 
+	{
+		"build" : "MUSI6106Exec",
+		"source" : "src/MUSI6106Exec"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				2,
+				3,
+				4,
+				5
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "src/MUSI6106Exec/CMakeLists.txt",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/MUSI6106Exec/MUSI6106Exec.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/inc/AudioFileIf.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/inc/RingBuffer.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/inc/Util.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/inc/Vector.h",
+			"sourceGroupIndex" : 2
+		}
+	],
+	"type" : "EXECUTABLE"
+}

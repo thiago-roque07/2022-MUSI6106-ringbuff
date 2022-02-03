@@ -1,0 +1,11 @@
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/MUSI6106Exec/CMakeFiles/rebuild_cache.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/MUSI6106Exec/CMakeFiles/MUSI6106Exec.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/MUSI6106Exec/CMakeFiles/edit_cache.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/AudioFileIO/CMakeFiles/AudioFileIO.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/AudioFileIO/CMakeFiles/edit_cache.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/AudioFileIO/CMakeFiles/rebuild_cache.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/AudioFileIO/sndlib/CMakeFiles/sndlib.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/AudioFileIO/sndlib/CMakeFiles/edit_cache.dir
+C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/AudioFileIO/sndlib/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/thiag/Documents/Git-repos/2022-MUSI6106-exercise_ringbuff/out/build/x64-Debug/MUSI6106Exec/CMakeFiles/MUSI6106Exec.dir/embed.manifest"
