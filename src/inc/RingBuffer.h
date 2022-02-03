@@ -41,6 +41,7 @@ public:
         }
         ringbuff[CRingBuffer::writeIdx] = tNewValue;
         CRingBuffer::writeIdx++;
+        CRingBuffer::lastCommandPut = true;
 
         return;
     }
@@ -66,6 +67,8 @@ public:
         }
         T readValue = static_cast<T>(ringbuff[CRingBuffer::readIdx]);
         CRingBuffer::readIdx++;
+        CRingBuffer::lastCommandPut = false;
+
         return readValue;
     }
 
@@ -76,7 +79,14 @@ public:
     {
         return static_cast<T>(ringbuff[CRingBuffer::readIdx]);
     }
-    
+
+    /*! return the value at the current read index plus an offset
+    \return float the value from the read index
+    */
+    T get(int iOffset = 0) const
+    {
+        return static_cast<T>(ringbuff[(CRingBuffer::readIdx) + iOffset]);
+    }
     /*! set buffer content and indices to 0
     \return void
     */
@@ -88,6 +98,8 @@ public:
         }
         CRingBuffer::readIdx = 0;
         CRingBuffer::writeIdx = 0;
+        CRingBuffer::lastCommandPut = false;
+
         return;
     }
 
@@ -132,11 +144,14 @@ public:
     */
     int getNumValuesInBuffer() const
     {
-        if (CRingBuffer::readIdx <= CRingBuffer::writeIdx) {
+        if (CRingBuffer::readIdx < CRingBuffer::writeIdx) {
             return (CRingBuffer::writeIdx - CRingBuffer::readIdx);
         }
-        else if (CRingBuffer::readIdx > CRingBuffer::writeIdx) {
+        else if ((CRingBuffer::readIdx >= CRingBuffer::writeIdx)&&(!lastCommandPut)) {
             return (CRingBuffer::m_iBuffLength - (CRingBuffer::readIdx - CRingBuffer::writeIdx));
+        }
+        else {
+            return (CRingBuffer::m_iBuffLength);
         }
     }
 
@@ -156,6 +171,7 @@ private:
     T* ringbuff;
     int readIdx = 0;
     int writeIdx = 0;
+    bool lastCommandPut = false;
     
 
 };

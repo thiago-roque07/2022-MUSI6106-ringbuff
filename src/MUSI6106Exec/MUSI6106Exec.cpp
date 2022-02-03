@@ -48,7 +48,6 @@ void     showClInfo()
 {
     cout << "MUSI6106 Assignment Executable" << endl;
     cout << "(c) 2014-2022 by Alexander Lerch" << endl;
-    cout << "blablabla" << endl;
     cout  << endl;
 
     return;
