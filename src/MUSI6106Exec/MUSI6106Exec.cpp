@@ -18,24 +18,40 @@ int main(int argc, char* argv[])
 {
      CRingBuffer<float>* pCRingBuff = 0; 
     
-    static const int kBlockSize = 17;
+    static const int kBlockSize = 7;
+    const int testInitLenght = 10;
+    const int testEndLength = 40;
 
     showClInfo();
 
     pCRingBuff = new CRingBuffer<float>(kBlockSize);
-
-    for (int i = 0; i < 5; i++)
+     
+    for (int i = 0; i < testInitLenght; i++)
     {
         pCRingBuff->putPostInc(1.F*i);
     }
-
-    for (int i = 5; i < 30; i++)
+ 
+    for (int i = testInitLenght; i < testEndLength; i++)
     {
         cout << i << "-";
-        cout << pCRingBuff->getNumValuesInBuffer() << "-"; // should be five
-        cout << pCRingBuff->getPostInc(); // should be i-5
+        if (pCRingBuff->getNumValuesInBuffer() == testInitLenght) {
+            cout << pCRingBuff->getNumValuesInBuffer() << "-"; // should be = testInitLenght
+        }
+        else { 
+            cout << "Error Num Values in Buffer";
+            return -1;
+        }
+        
+        float getVal = pCRingBuff->getPostInc();
+        if (getVal == (i - testInitLenght)) {
+            cout << getVal; // should be i-testInitLenght
+        }
+        else {
+            cout << "Error Get Post Inc";
+            return -1;
+        }
         cout << endl;
-        pCRingBuff->putPostInc(1.F*i);
+        pCRingBuff->putPostInc(1.F * i);
     }
     cout << "test ended with no errors";
     //// all done

@@ -144,10 +144,11 @@ public:
     */
     int getNumValuesInBuffer() const
     {
-        if (CRingBuffer::readIdx < CRingBuffer::writeIdx) {
+        if (CRingBuffer::readIdx <= CRingBuffer::writeIdx) {
             return (CRingBuffer::writeIdx - CRingBuffer::readIdx);
         }
-        else if ((CRingBuffer::readIdx >= CRingBuffer::writeIdx)&&(!lastCommandPut)) {
+        //&&(!lastCommandPut)
+        else if ((CRingBuffer::readIdx > CRingBuffer::writeIdx)) {
             return (CRingBuffer::m_iBuffLength - (CRingBuffer::readIdx - CRingBuffer::writeIdx));
         }
         else {
