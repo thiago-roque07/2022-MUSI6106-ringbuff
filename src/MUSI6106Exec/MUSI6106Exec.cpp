@@ -20,10 +20,10 @@ int main(int argc, char* argv[])
     
     static const int kBlockSize = 15;
     const int test1_InitLenght = 10;
-    const int test1_EndLength1 = 40;
+    const int test1_EndLength = 50;
 
-    const int test2_InitLenght = 17;
-    const int test2_EndLength1 = 40;
+    const int test2_InitLenght = 18;
+    const int test2_EndLength = 40;
 
     showClInfo();
 
@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
         pCRingBuff->putPostInc(1.F*i);
     }
  
-    for (int i = test1_InitLenght; i < test2_EndLength1; i++)
+    for (int i = test1_InitLenght; i < test1_EndLength; i++)
     {
         cout << i << "-";
         if (pCRingBuff->getNumValuesInBuffer() == test1_InitLenght) {
@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
         
         float getVal = pCRingBuff->getPostInc();
         if (getVal == (i - test1_InitLenght)) {
-            cout << getVal; // should be i-test1_InitLenght
+            cout << getVal << "--" << pCRingBuff->getReadIdx();; // should be i-test1_InitLenght
         }
         else {
             cout << "Error Get Post Inc";
@@ -61,6 +61,7 @@ int main(int argc, char* argv[])
     }
     cout << endl;
 
+    /////////////////////////
     // Test reset function //
     pCRingBuff->reset();
     cout << "-- test reset function --" << endl;
@@ -85,17 +86,22 @@ int main(int argc, char* argv[])
     cout << "buffer empty" << endl;
     cout << endl;
 
+    // Tests for more complex write and read//
     cout << "-- test more complex write and read --" << endl;
     for (int i = 0; i < test2_InitLenght; i++)
     {
+        cout << "variable: " << i << endl;
+        cout << "index:" << pCRingBuff->getWriteIdx() << endl;
         pCRingBuff->putPostInc(1.F * i);
+
     }
-        
-    for (int i = test2_InitLenght; i < test2_EndLength1; i++)
+    
+    cout << endl;
+    for (int i = test2_InitLenght; i < test2_EndLength; i++)
     {
         cout << i << "-";
-        if (pCRingBuff->getNumValuesInBuffer() == test2_InitLenght) {
-            cout << pCRingBuff->getNumValuesInBuffer() << "-"; // should be = test2_InitLenght
+        if (pCRingBuff->getNumValuesInBuffer() == (test2_InitLenght - kBlockSize)) {
+            cout << pCRingBuff->getNumValuesInBuffer() << "-";
         }
         else {
             cout << "Error Num Values in Buffer" << endl;
@@ -104,14 +110,18 @@ int main(int argc, char* argv[])
             return -1;
         }
 
+        int getIdx = pCRingBuff->getReadIdx();
         float getVal = pCRingBuff->getPostInc();
-        if (getVal == (i - test2_InitLenght)) {
-            cout << getVal; // should be i-test2_InitLenght
+        if (getVal == (i - test2_InitLenght + kBlockSize)) {
+            cout << getVal << "--" << getIdx;
         }
         else {
-            cout << "Error Get Post Inc";
+            cout << "Error Get value from buffer" << endl;
+            cout << "received value:" << getVal << endl;
+            cout << "get index: " << getIdx;
             return -1;
         }
+
         cout << endl;
         pCRingBuff->putPostInc(1.F * i);
     }

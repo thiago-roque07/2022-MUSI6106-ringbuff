@@ -72,13 +72,13 @@ public:
         return readValue;
     }
 
-    /*! return the value at the current read index
-    \return float the value from the read index
-    */
-    T get() const
-    {
-        return static_cast<T>(ringbuff[CRingBuffer::readIdx]);
-    }
+    ///*! return the value at the current read index
+    //\return float the value from the read index
+    //*/
+    //T get() const
+    //{
+    //    return static_cast<T>(ringbuff[CRingBuffer::readIdx]);
+    //}
 
     /*! return the value at the current read index plus an offset
     \return float the value from the read index
