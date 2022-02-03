@@ -18,33 +18,38 @@ int main(int argc, char* argv[])
 {
      CRingBuffer<float>* pCRingBuff = 0; 
     
-    static const int kBlockSize = 7;
-    const int testInitLenght = 10;
-    const int testEndLength = 40;
+    static const int kBlockSize = 15;
+    const int test1_InitLenght = 10;
+    const int test1_EndLength1 = 40;
+
+    const int test2_InitLenght = 17;
+    const int test2_EndLength1 = 40;
 
     showClInfo();
 
     pCRingBuff = new CRingBuffer<float>(kBlockSize);
      
-    for (int i = 0; i < testInitLenght; i++)
+    for (int i = 0; i < test1_InitLenght; i++)
     {
         pCRingBuff->putPostInc(1.F*i);
     }
  
-    for (int i = testInitLenght; i < testEndLength; i++)
+    for (int i = test1_InitLenght; i < test2_EndLength1; i++)
     {
         cout << i << "-";
-        if (pCRingBuff->getNumValuesInBuffer() == testInitLenght) {
-            cout << pCRingBuff->getNumValuesInBuffer() << "-"; // should be = testInitLenght
+        if (pCRingBuff->getNumValuesInBuffer() == test1_InitLenght) {
+            cout << pCRingBuff->getNumValuesInBuffer() << "-"; // should be = test1_InitLenght
         }
         else { 
-            cout << "Error Num Values in Buffer";
+            cout << "Error Num Values in Buffer" << endl;
+            cout << "expected value: " << test1_InitLenght << endl;
+            cout << "received value : " << pCRingBuff->getNumValuesInBuffer();
             return -1;
         }
         
         float getVal = pCRingBuff->getPostInc();
-        if (getVal == (i - testInitLenght)) {
-            cout << getVal; // should be i-testInitLenght
+        if (getVal == (i - test1_InitLenght)) {
+            cout << getVal; // should be i-test1_InitLenght
         }
         else {
             cout << "Error Get Post Inc";
@@ -53,6 +58,40 @@ int main(int argc, char* argv[])
         cout << endl;
         pCRingBuff->putPostInc(1.F * i);
     }
+
+    pCRingBuff->reset();
+
+    for (int i = 0; i < test2_InitLenght; i++)
+    {
+        pCRingBuff->putPostInc(1.F * i);
+    }
+        
+    for (int i = test2_InitLenght; i < test2_EndLength1; i++)
+    {
+        cout << i << "-";
+        if (pCRingBuff->getNumValuesInBuffer() == test2_InitLenght) {
+            cout << pCRingBuff->getNumValuesInBuffer() << "-"; // should be = test2_InitLenght
+        }
+        else {
+            cout << "Error Num Values in Buffer" << endl;
+            cout << "expected value: " << test2_InitLenght << endl;
+            cout << "received value : " << pCRingBuff->getNumValuesInBuffer();
+            return -1;
+        }
+
+        float getVal = pCRingBuff->getPostInc();
+        if (getVal == (i - test2_InitLenght)) {
+            cout << getVal; // should be i-test2_InitLenght
+        }
+        else {
+            cout << "Error Get Post Inc";
+            return -1;
+        }
+        cout << endl;
+        pCRingBuff->putPostInc(1.F * i);
+    }
+
+
     cout << "test ended with no errors";
     //// all done
     return 0;
